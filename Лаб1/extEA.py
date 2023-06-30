@@ -1,5 +1,5 @@
 from timeit import default_timer as timer
-def extended_euclidean_algorithm(a, b):#Расширенный алгоритм Евклида
+def extended_euclidean_algorithm(a, b): #Расширенный алгоритм Евклида
     if a < b:
         a, b = b, a
     Ichar, Rchar, Xchar, Ychar, Qchar = 'i', 'r', 'x', 'y', 'q'
@@ -11,7 +11,7 @@ def extended_euclidean_algorithm(a, b):#Расширенный алгоритм 
     ri = b
     i = 0
     temp_r, temp_x, temp_y = 1, 1, 1
-    print("========================================================================\n\tРасширенный алгоритм Евклида")
+    print("========================================================================\n\t Extended Euclidean algorithm")
     print("% 3c" % Ichar, "% 25c" % Rchar, "% 25c" % Xchar, "% 25c" % Ychar, "% 25c" % Qchar)
     print("% 3d" % i, "% 25d" % ri_1, "% 25d" % xi, "% 25d" % yi)
     while temp_r!=0:
@@ -29,8 +29,8 @@ def extended_euclidean_algorithm(a, b):#Расширенный алгоритм 
         yi=temp_y
         ri_1 = ri
         ri = temp_r
-    print("НОД = ", ri)
-    print("Первый коэфф: ", xi)
+    print("GCD = ", ri)
+    print("First coefficient: ", xi)
     print("Второй коэфф: ", yi)
     return
 
@@ -48,7 +48,7 @@ def extended_binary_euclidean_algorithm(a, b):
     C = 0
     D = 1
     i = 0
-    print("========================================================================\n\tРасширенный бинарный алгоритм Евклида")
+    print("========================================================================\n\t Extended binary Euclidean algorithm")
     print("% 3c" % Ichar, "% 42c" %Uchar, "% 42c" %Vchar, "%42c" % Achar, "% 42c" %Bchar, "% 42c" %Cchar, "% 42c" %Dchar)
     while u!=0:
         print("% 3d" %i,"% 42d" %u, "% 42d" %v, "% 42d" %A, "% 42d" %B, "% 42d" %C, "% 42d" %D)
@@ -80,9 +80,9 @@ def extended_binary_euclidean_algorithm(a, b):
     d = g * v
     x = C
     y = D
-    print("НОД = ", int(d))
-    print("Первый коэфф = ", int(x))
-    print("Второй коэфф = ", int(y))
+    print("GCD = ", int(d))
+    print("First coefficient = ", int(x))
+    print("Second coefficient = ", int(y))
     return
 
 def extended_euclidean_algorithm_with_us(a, b):
@@ -97,7 +97,7 @@ def extended_euclidean_algorithm_with_us(a, b):
     ri = b
     i = 0
     temp_r, temp_x, temp_y = 1, 1, 1
-    print("========================================================================\n\tРасширенный бинарный алгоритм Евклида с усечёнными остатками")
+    print("========================================================================\n\t Extended binary Euclidean algorithm with truncated residuals")
     print("% 3c" % Ichar, "% 85c" % Rchar, "% 42c" % Xchar, "% 42c" % Ychar, "% 10c" % Qchar)
     print("% 3d" % i, "% 85d" % ri_1, "% 42d" % xi, "% 42d" % yi)
     while temp_r!=0:
@@ -119,29 +119,24 @@ def extended_euclidean_algorithm_with_us(a, b):
             yi = yi_1 - yi
         ri_1 = ri
         ri = temp_r
-    print("НОД = ", ri)
-    print("Первый коэфф: ", xi)
-    print("Второй коэфф: ", yi)
+    print("GCD = ", ri)
+    print("First coefficient: ", xi)
+    print("Second coefficient: ", yi)
     return
-
+# Enter your numbers here, examples given
 A1 = 10280584362558385364313785041802045979548186541286500517257326693113600668924649
 B1 = 14598422008191898215363941644699891185829894490005557691091371425993340283543011
 A2 = 10280584362558385364313785041802045979548186541286500517257326693113600668924649
 B2 = 14598422008191898215363941644699891185829894490005557691091371425993340283543011
 A3 = 10280584362558385364313785041802045979548186541286500517257326693113600668924649
 B3 = 14598422008191898215363941644699891185829894490005557691091371425993340283543011
-#A1 = 3857119352587748339
-#B1 = 7725867209565428117
-#A2 = 1508570634299956106041083924384400803049
-#B2 = 809549785931263573750937056404595161133
-#A3 = 10280584362558385364313785041802045979548186541286500517257326693113600668924649
-#B3 = 14598422008191898215363941644699891185829894490005557691091371425993340283543011
+
 start = timer()
 extended_euclidean_algorithm(A1, B1)
-print("Время: {:g} secs".format(timer() - start))
+print("Time: {:g} secs".format(timer() - start))
 start = timer()
 extended_binary_euclidean_algorithm(A2, B2)
-print("Время: {:g} secs".format(timer() - start))
+print("Time: {:g} secs".format(timer() - start))
 start = timer()
 extended_euclidean_algorithm_with_us(A3, B3)
-print("Время: {:g} secs".format(timer() - start))
+print("Time: {:g} secs".format(timer() - start))
