@@ -20,7 +20,6 @@ def f(num, test_count):
     print(testers)
     return
 
-
 def rm(num, test_count):
     print("тест Рабина Миллера")
     testers = []
@@ -51,7 +50,6 @@ def rm(num, test_count):
     print(testers)
     return
 
-
 def jacobi(a_j, n_j):
     a_j %= n_j
     result = 1
@@ -69,7 +67,6 @@ def jacobi(a_j, n_j):
         return result
     else:
         return 0
-
 
 def sh(num, test_count):
     print("тест Соловэя Штрассена")
@@ -101,7 +98,6 @@ def sh(num, test_count):
     print(testers)
     return
 
-
 def pr_menu(count):
     i = 0
     opts = ["Все", "Тест Ферма", "Тест Соловэя-Штрассена", "Тест Рабина-Миллера"]
@@ -112,7 +108,6 @@ def pr_menu(count):
             print(opts[i])
         i += 1
     return
-
 
 def menu():
     max_v = 3
